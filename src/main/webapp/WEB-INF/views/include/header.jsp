@@ -18,7 +18,7 @@
 			<td width="7%" class="menu01">QUESTION</td>
 			<td width="6%" class="menu01">CONTACT</td>
 		</tr>
-		<tr height="50">
+		<tr height="40">
 			<td>&nbsp;</td>
 		</tr>
 	</table>
