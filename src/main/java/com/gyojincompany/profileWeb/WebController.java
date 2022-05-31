@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gyojincompany.profileWeb.dao.IDao;
+import com.gyojincompany.profileWeb.dto.MemberDto;
 
 @Controller
 public class WebController {
@@ -71,7 +72,7 @@ public class WebController {
 		
 		IDao dao = sqlSession.getMapper(IDao.class);
 		
-		int checkId = dao.checkIdDao(mid);
+		int checkId = dao.checkIdDao(mid);//아이디 존재 여부 체크->존재하면 1이 반환
 		
 		if (checkId != 1) {
 		
@@ -88,6 +89,40 @@ public class WebController {
 		model.addAttribute("checkId", checkId);
 		
 		return "joinOk";
+	}
+	
+	@RequestMapping(value = "/loginOk")
+	public String loginOk(HttpServletRequest request, Model model) {
+		
+		String mid = request.getParameter("mid");
+		String mpw = request.getParameter("mpw");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		int checkId = dao.checkIdDao(mid);//아이디 존재 여부 체크->존재하면 1이 반환
+		
+		int checkPw = dao.checkPwDao(mid, mpw);//아이디와 비밀번호 일치여부 확인->일치하면 1이 반환 
+		
+		model.addAttribute("checkId", checkId);
+		model.addAttribute("checkPw", checkPw);		
+		
+			
+		if (checkPw == 1) {
+			
+			MemberDto memberDto = dao.loginInfoDao(mid);
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("id", memberDto.getMid());
+			session.setAttribute("name", memberDto.getMname());
+			
+			model.addAttribute("mid", memberDto.getMid());
+			model.addAttribute("mname", memberDto.getMname());
+			
+			}					
+			
+		
+		return "loginOk";
 	}
 	
 }

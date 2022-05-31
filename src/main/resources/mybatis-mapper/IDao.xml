@@ -16,6 +16,14 @@
 		SELECT COUNT(*) FROM q_member WHERE mid = #{param1}
 	</select>
 	
+	<select id="checkPwDao" resultType="int">
+		SELECT COUNT(*) FROM q_member WHERE mid = #{param1} AND mpw = #{param2}
+	</select>
+	
+	<select id="loginInfoDao" resultType="com.gyojincompany.profileWeb.dto.MemberDto">
+		SELECT * FROM q_member WHERE mid = #{param1}
+	</select>
+	
 	
 	<!-- board SQL -->
 
