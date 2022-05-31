@@ -36,4 +36,10 @@ public class WebController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/join")
+	public String join() {
+		
+		return "join";
+	}
+	
 }
