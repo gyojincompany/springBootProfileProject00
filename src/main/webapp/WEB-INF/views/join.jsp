@@ -30,7 +30,7 @@
 									<span class="text01">MEMBER ID : </span> 
 								</td>
 								<td>
-									<input class="type01" type="text" name="id">
+									<input class="type01" type="text" name="mid">
 								</td>
 							</tr>
 							<tr>
@@ -38,7 +38,7 @@
 									<span class="text01">PASSWORD : </span> 
 								</td>
 								<td>
-									<input class="type01" type="password" name="pw">
+									<input class="type01" type="password" name="mpw">
 								</td>
 							</tr>
 							<tr>
@@ -46,7 +46,7 @@
 									<span class="text01">PW CHECK : </span> 
 								</td>
 								<td>
-									<input class="type01" type="password" name="pw_check">
+									<input class="type01" type="password" name="mpw_check">
 								</td>
 							</tr>
 							<tr>
@@ -54,7 +54,7 @@
 									<span class="text01">NAME : </span> 
 								</td>
 								<td>
-									<input class="type01" type="text" name="name">
+									<input class="type01" type="text" name="mname">
 								</td>
 							</tr>
 							<tr>
@@ -62,7 +62,7 @@
 									<span class="text01">E-MAIL : </span> 
 								</td>
 								<td>
-									<input class="type01" type="text" name="email">
+									<input class="type01" type="text" name="memail">
 								</td>
 							</tr>
 							<tr>
