@@ -30,3 +30,13 @@ input.button01 {
 	color: #ffffff;
 	font-family: malgun;
 }
+
+#textarea01 {
+	
+	border: 1px solid #c0c0c0;
+	background-color: #ffffff;
+	width: 220px;
+	padding: 5px;
+	font-family: Arial;
+	font-size: 20px;
+}
