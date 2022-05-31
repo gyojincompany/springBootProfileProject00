@@ -42,7 +42,7 @@
 						</script>
 						<% 
 							} else {
-								session.setAttribute("ValidMem", "yes");
+								session.setAttribute("ValidMem", "yes");								
 							}
 						%>
 												
