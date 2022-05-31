@@ -30,4 +30,10 @@ public class WebController {
 		return "contact";
 	}
 	
+	@RequestMapping(value = "/login")
+	public String login() {
+		
+		return "login";
+	}
+	
 }
