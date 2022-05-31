@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/title.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/content.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/member.css">
+<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/join.js"></script>
 <title>## Leegyojin Profile Web</title>
 </head>
 <body>
@@ -67,8 +68,7 @@
 							</tr>
 							<tr>
 								<td colspan="2">
-									<!-- <input class="button01" type="button" value="회원가입" onclick="">&nbsp;&nbsp; -->
-									<input class="button01" type="submit" value="회원가입">&nbsp;&nbsp;
+									<input class="button01" type="button" value="회원가입" onclick="joinCheck()">&nbsp;&nbsp;									
 									<input class="button01" type="button" value="로그인" onclick="location.href='login'">
 								</td>
 							</tr>
