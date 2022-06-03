@@ -13,4 +13,5 @@ public interface IDao {
 	
 	
 	//질문게시판관련 dao 메서드
+	public void writeDao(String qid, String qname, String qcontent, String qemail);//글쓰기
 }

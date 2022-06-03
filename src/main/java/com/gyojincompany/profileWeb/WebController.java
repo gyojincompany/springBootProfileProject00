@@ -164,4 +164,14 @@ public class WebController {
 		return "infoModifyOk";
 	}
 	
+	@RequestMapping(value = "/write")
+	public String write(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.writeDao(request.getParameter("qid"), request.getParameter("qname"), request.getParameter("qcontent"), request.getParameter("qemail"));
+		
+		return "redirect:list";
+	}
+	
 }
