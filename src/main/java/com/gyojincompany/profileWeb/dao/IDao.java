@@ -1,5 +1,8 @@
 package com.gyojincompany.profileWeb.dao;
 
+import java.util.ArrayList;
+
+import com.gyojincompany.profileWeb.dto.BoardDto;
 import com.gyojincompany.profileWeb.dto.MemberDto;
 
 public interface IDao {
@@ -14,4 +17,5 @@ public interface IDao {
 	
 	//질문게시판관련 dao 메서드
 	public void writeDao(String qid, String qname, String qcontent, String qemail);//글쓰기
+	public ArrayList<BoardDto> listDao();//리스트 가져오기
 }

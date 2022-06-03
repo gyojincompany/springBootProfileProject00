@@ -1,5 +1,7 @@
 package com.gyojincompany.profileWeb;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gyojincompany.profileWeb.dao.IDao;
+import com.gyojincompany.profileWeb.dto.BoardDto;
 import com.gyojincompany.profileWeb.dto.MemberDto;
 
 @Controller
@@ -173,5 +176,20 @@ public class WebController {
 		
 		return "redirect:list";
 	}
+	
+	@RequestMapping(value = "/list")
+	public String list(Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		ArrayList<BoardDto> boardDtos = dao.listDao();
+		
+		
+		model.addAttribute("qlist", boardDtos);
+		
+		return "list";
+	}
+	
+	
 	
 }
