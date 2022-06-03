@@ -32,3 +32,15 @@ function boardConfirm() {
 	
 	document.question_frm.submit();
 }
+
+function modifyAlert() {
+	
+	alert("글의 게시자만 글 수정이 가능합니다.");
+	
+}
+
+
+
+
+
+

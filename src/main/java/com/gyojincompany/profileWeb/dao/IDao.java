@@ -18,4 +18,9 @@ public interface IDao {
 	//질문게시판관련 dao 메서드
 	public void writeDao(String qid, String qname, String qcontent, String qemail);//글쓰기
 	public ArrayList<BoardDto> listDao();//리스트 가져오기
+	public BoardDto viewDao(String qnum);//글 내용 보기
+	public void boardModify(String qname, String qcontent, String qemail, String qnum);//글 수정하기
+	public void deleteDao(String qnum);//글 삭제
+	
+	
 }

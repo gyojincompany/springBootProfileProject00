@@ -190,6 +190,47 @@ public class WebController {
 		return "list";
 	}
 	
+	@RequestMapping(value = "/qview")
+	public String qview(HttpServletRequest request, Model model) {
+		
+		String qnum = request.getParameter("qnum");
+		IDao dao = sqlSession.getMapper(IDao.class);
+		BoardDto boardDto = dao.viewDao(qnum);
+		
+		model.addAttribute("boardDto", boardDto);
+		model.addAttribute("boardId", boardDto.getQid());
+		
+		return "qview";
+	}
+	
+	@RequestMapping(value = "/boardModify")
+	public String boardModify(HttpServletRequest request) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		String qnum = request.getParameter("qnum");
+		String qname = request.getParameter("qname");
+		String qcontent = request.getParameter("qcontent");
+		String qemail = request.getParameter("qemail");
+		
+		dao.boardModify(qname, qcontent, qemail, qnum);
+		
+		return "redirect:list";
+	}
+	
+	@RequestMapping(value = "/delete")
+	public String delete(HttpServletRequest request) {
+		
+		String qnum = request.getParameter("qnum");
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.deleteDao(qnum);
+		
+		return "redirect:list";	
+	}
+	
+	
 	
 	
 }

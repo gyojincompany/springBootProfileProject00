@@ -40,7 +40,7 @@
 								<td class="board02">${qdto.qnum }</td>
 								<td class="board02">${qdto.qid }</td>
 								<td class="board03">
-								<a href="">
+								<a href="qview?qnum=${qdto.qnum }">
 									<c:choose>
 										<c:when test="${fn:length(qdto.qcontent) > 26}">
 											<c:out value="${fn:substring(qdto.qcontent,0,25) }" /> ......
