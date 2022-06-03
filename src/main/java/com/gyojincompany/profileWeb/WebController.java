@@ -81,6 +81,7 @@ public class WebController {
 			HttpSession session = request.getSession();
 			
 			session.setAttribute("id", mid);
+			session.setAttribute("name", mname);
 			
 			model.addAttribute("mname", mname);
 			model.addAttribute("mid", mid);
