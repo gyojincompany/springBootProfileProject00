@@ -149,4 +149,18 @@ public class WebController {
 		return "infoModify";
 	}
 	
+	@RequestMapping(value = "/infoModifyOk")
+	public String infoModifyOk(HttpServletRequest request, Model model) {
+		
+		IDao dao = sqlSession.getMapper(IDao.class);
+		
+		dao.infoModify(request.getParameter("mpw"), request.getParameter("mname"), request.getParameter("memail"), request.getParameter("mid"));
+		
+		MemberDto memberDto = dao.loginInfoDao(request.getParameter("mid"));
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "infoModifyOk";
+	}
+	
 }
